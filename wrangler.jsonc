@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "greg-marshall-racing",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+  "d1_databases": [{ "binding": "DB", "database_name": "greg-marshall-racing", "database_id": "f609e7f3-a7c9-446e-be97-1ccf39523925", "remote": true }],
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "greg-marshall-racing-media", "remote": true }],
+  "triggers": { "crons": ["*/30 * * * *"] }
+}
