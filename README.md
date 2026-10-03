@@ -47,3 +47,14 @@ The old WordPress backup contained legacy social/API credentials. None are inclu
 
 ## Optional API base override
 By default the Worker uses `https://graph.instagram.com`. If Meta changes the endpoint for the token type you configure, set an `INSTAGRAM_API_BASE` Worker variable and redeploy; no page-code changes are required.
+
+## v1.3 visual/admin update
+- New site-wide black / white / neon pink / cyan motorsport visual system.
+- Consistent modern typography and responsive navigation across all pages.
+- Temporary ADMIN link added to the public navigation during development.
+- Admin can replace the global header logo.
+- Admin can edit homepage hero artwork and hero/intro text.
+- Admin can upload and assign page banner artwork for News, Photos, About, 2026 and Sponsors.
+- News items support optional image URLs for homepage artwork.
+- Existing D1 content is preserved; new branding/home/artwork fields are merged with safe defaults.
+- Existing R2 media, D1, Instagram feed, admin password and Cloudflare bindings remain unchanged.
