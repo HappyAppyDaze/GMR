@@ -1,3 +1,15 @@
+# Greg Marshall Racing — Cloudflare v2.1
+
+## v2.1 changes
+- Added a dedicated **Photos** section to Admin.
+- Existing photo albums and images are loaded into Admin automatically.
+- Create, rename and remove albums.
+- Replace an existing photo by URL or direct file upload to R2.
+- Add photos to an album by URL or direct file upload.
+- Remove individual photos from albums.
+- The public Photos page now reads its album structure from editable D1 site content, with the original imported gallery as the fallback.
+- No new D1 migration is required.
+
 # Greg Marshall Racing — Cloudflare baseline v1.2
 
 This build keeps the migrated public site stable and restores a Cloudflare-native social-feed layer plus a usable admin portal.
