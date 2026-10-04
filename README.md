@@ -113,3 +113,10 @@ Fixed the animated pink/cyan edge effect so it visibly flows on sponsor, news/ev
 - News cards show a short teaser instead of the full long narrative.
 - News article image fields in Admin now support direct file upload to R2 as well as image URLs.
 - Uploaded article images are previewed in Admin and used on the News card/modal.
+
+
+## v2.2
+- Added editable numeric album ordering in Admin → Photos.
+- Highest album order number displays first on the public Photos page.
+- Newly created albums automatically receive the next highest order number and appear at the top.
+- Existing albums without an order remain valid and default to order 0 until numbered.
