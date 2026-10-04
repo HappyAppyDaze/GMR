@@ -88,3 +88,44 @@
 }
 @media(max-width:900px){.hero + .section{padding-top:26px}}
 @media(max-width:620px){.hero + .section{padding-top:22px}}
+
+/* v1.9 — restore the original subtle moving pink/cyan edge treatment.
+   This deliberately uses the same background-position technique as the sponsor
+   tiles in v1.4, which produced the visible motion the site owner preferred. */
+@keyframes sponsorGlow{
+  0%{background-position:0 0,0% 50%}
+  50%{background-position:0 0,100% 50%}
+  100%{background-position:0 0,0% 50%}
+}
+.card,.calendar .row,.stat,.social-card{
+  border:2px solid transparent;
+  background-origin:border-box;
+  background-clip:padding-box,border-box;
+  background-size:100% 100%,220% 220%;
+  background-position:0 0,0% 50%;
+  animation:sponsorGlow 5s linear infinite !important;
+}
+.card,.social-card{background-image:linear-gradient(145deg,var(--panel2),#0b0c10),linear-gradient(120deg,var(--pink),var(--cyan),var(--pink))}
+.calendar .row{background-image:linear-gradient(var(--panel),var(--panel)),linear-gradient(120deg,var(--pink),var(--cyan),var(--pink))}
+.stat{background-image:linear-gradient(var(--panel2),var(--panel2)),linear-gradient(120deg,var(--pink),var(--cyan),var(--pink))}
+.sponsor{
+  background-image:linear-gradient(var(--tile-bg),var(--tile-bg)),linear-gradient(120deg,var(--pink),var(--cyan),var(--pink));
+  background-origin:border-box;
+  background-clip:padding-box,border-box;
+  background-size:100% 100%,220% 220%;
+  background-position:0 0,0% 50%;
+  animation:sponsorGlow 5s linear infinite !important;
+}
+.gallery img{
+  border:2px solid transparent;
+  padding:0;
+  background:linear-gradient(120deg,var(--pink),var(--cyan),var(--pink));
+  background-size:220% 220%;
+  background-position:0% 50%;
+  animation:gmrPhotoGlow 5s linear infinite !important;
+}
+@keyframes gmrPhotoGlow{0%{border-color:var(--pink);box-shadow:0 0 0 rgba(0,0,0,0)}50%{border-color:var(--cyan);box-shadow:0 0 10px rgba(19,232,255,.14)}100%{border-color:var(--pink);box-shadow:0 0 0 rgba(0,0,0,0)}}
+
+
+/* v2.0 — clickable news headlines + article narrative modal */
+.news-headline{appearance:none;background:none;border:0;padding:0;margin:0;color:inherit;font:inherit;text-align:left;cursor:pointer;line-height:inherit}.news-headline:hover,.news-headline:focus{color:var(--cyan);text-shadow:-1px 0 5px rgba(255,42,161,.45),1px 0 5px rgba(19,232,255,.45);outline:none}.news-teaser{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;color:#d7d7de}.news-modal{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;padding:24px}.news-modal.open{display:flex}.news-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(7px)}.news-modal-box{position:relative;z-index:1;width:min(850px,100%);max-height:min(84vh,900px);overflow:auto;background:#0d0e12;border:2px solid transparent;background-image:linear-gradient(#0d0e12,#0d0e12),linear-gradient(120deg,var(--pink),var(--cyan),var(--pink));background-origin:border-box;background-clip:padding-box,border-box;background-size:100% 100%,220% 220%;animation:sponsorGlow 5s linear infinite;box-shadow:0 24px 80px rgba(0,0,0,.65)}.news-modal-close{position:sticky;float:right;top:12px;margin:12px 12px -52px 0;z-index:3;width:42px;height:42px;border:1px solid var(--cyan);background:rgba(5,5,7,.9);color:white;font-size:30px;line-height:34px;cursor:pointer}.news-modal-image{display:block;width:100%;max-height:390px;object-fit:cover}.news-modal-content{padding:30px}.news-modal-content small{color:var(--cyan);font-weight:700;text-transform:uppercase}.news-modal-content h2{font-family:'Barlow Condensed',Arial,sans-serif;text-transform:uppercase;font-size:clamp(32px,5vw,52px);line-height:1;margin:10px 0 22px;text-shadow:-2px 0 7px rgba(255,42,161,.5),2px 0 7px rgba(19,232,255,.45)}.news-modal-body{white-space:pre-wrap;font-size:17px;line-height:1.72;color:#ededf2}.modal-open{overflow:hidden}@media(max-width:620px){.news-modal{padding:12px}.news-modal-content{padding:22px}.news-modal-box{max-height:90vh}}

@@ -89,3 +89,15 @@ Fixed the animated pink/cyan edge effect so it visibly flows on sponsor, news/ev
 - Main navigation is now fixed to the top of the viewport on all pages.
 - Added page offset so content is not hidden behind the fixed 84px navigation bar.
 - Existing v1.7 visual styling and admin functionality retained.
+
+## v1.9
+- Restores the visibly moving pink/cyan tile-edge effect using the original v1.4 motion method.
+- Applies the motion consistently to sponsor, news/event, career/stat, social and photo tiles.
+- Sponsor Admin editors now show the current logo preview and current stored image/link/text values; empty fields explicitly show “No content being used”.
+
+
+## v2.0
+- News headlines now open the full article narrative in a modal popup.
+- News cards show a short teaser instead of the full long narrative.
+- News article image fields in Admin now support direct file upload to R2 as well as image URLs.
+- Uploaded article images are previewed in Admin and used on the News card/modal.
