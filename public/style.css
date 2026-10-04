@@ -4,3 +4,47 @@
 @media(max-width:620px){.grid,.stats,.sponsors,.admin-grid{grid-template-columns:1fr}.hero h1{font-size:64px}.hero .inner{padding:65px 0}.page-hero{min-height:230px}.footer-inner{flex-direction:column}.admin h1{font-size:40px}.wrap{width:min(100% - 30px,1180px)}}
 
 .page-hero:before{content:'';position:absolute;left:0;right:0;bottom:0;height:115px;background:linear-gradient(to bottom,transparent,var(--black));z-index:1;pointer-events:none}.sponsor-admin-row h3{color:var(--cyan);margin:0 0 10px}
+
+/* v1.5 — shared animated motorsport edge + deeper hero/content overlap */
+@property --edge-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes tmrEdgeSweep{to{--edge-angle:360deg}}
+
+/* Carry the subtle moving pink/cyan edge across the site's feature content. */
+.card,.calendar .row,.stat,.social-card{
+  border:2px solid transparent;
+  background-image:linear-gradient(145deg,var(--panel2),#0b0c10),conic-gradient(from var(--edge-angle),var(--pink),var(--cyan),var(--pink),var(--cyan),var(--pink));
+  background-origin:border-box;
+  background-clip:padding-box,border-box;
+  animation:tmrEdgeSweep 8s linear infinite;
+}
+.card:before{display:none}
+.calendar .row{background-image:linear-gradient(var(--panel),var(--panel)),conic-gradient(from var(--edge-angle),var(--pink),var(--cyan),var(--pink),var(--cyan),var(--pink));border-left-width:2px}
+.stat{background-image:linear-gradient(var(--panel2),var(--panel2)),conic-gradient(from var(--edge-angle),var(--pink),var(--cyan),var(--pink),var(--cyan),var(--pink));border-left-width:2px;border-top-width:2px}
+.social-card:hover{border-color:transparent;box-shadow:0 0 18px rgba(255,42,161,.14),0 0 18px rgba(19,232,255,.12)}
+
+/* Gallery photos use the same animated edge; the 2px padding exposes the gradient frame. */
+.gallery img{
+  border:0;
+  padding:2px;
+  background:conic-gradient(from var(--edge-angle),var(--pink),var(--cyan),var(--pink),var(--cyan),var(--pink));
+  animation:tmrEdgeSweep 8s linear infinite;
+}
+
+/* Non-home heroes retain more of the photograph and flow behind the content below. */
+.page-hero{min-height:390px;overflow:visible}
+.page-hero:after{
+  background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.42) 42%,rgba(0,0,0,.08) 80%),linear-gradient(0deg,var(--black) 0%,rgba(5,5,7,.68) 12%,rgba(5,5,7,.20) 32%,transparent 58%);
+}
+.page-hero:before{height:175px;background:linear-gradient(to bottom,transparent 0%,rgba(5,5,7,.22) 28%,rgba(5,5,7,.72) 72%,var(--black) 100%)}
+.page-hero .wrap{padding-bottom:78px}
+.page-hero + .section{
+  position:relative;
+  z-index:4;
+  margin-top:-72px;
+  padding-top:42px;
+  background:linear-gradient(to bottom,rgba(5,5,7,0) 0%,rgba(5,5,7,.82) 58px,var(--black) 118px);
+}
+
+@media(max-width:900px){.page-hero{min-height:330px}.page-hero + .section{margin-top:-58px;padding-top:38px}}
+@media(max-width:620px){.page-hero{min-height:280px}.page-hero .wrap{padding-bottom:62px}.page-hero + .section{margin-top:-46px;padding-top:32px}}
+@media(prefers-reduced-motion:reduce){.card,.calendar .row,.stat,.social-card,.gallery img,.sponsor{animation:none}}

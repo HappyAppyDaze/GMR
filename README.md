@@ -48,7 +48,7 @@ The old WordPress backup contained legacy social/API credentials. None are inclu
 ## Optional API base override
 By default the Worker uses `https://graph.instagram.com`. If Meta changes the endpoint for the token type you configure, set an `INSTAGRAM_API_BASE` Worker variable and redeploy; no page-code changes are required.
 
-## v1.4 visual/admin update
+## v1.5 visual/admin update
 - New site-wide black / white / neon pink / cyan motorsport visual system.
 - Consistent modern typography and responsive navigation across all pages.
 - Temporary ADMIN link added to the public navigation during development.
@@ -60,10 +60,17 @@ By default the Worker uses `https://graph.instagram.com`. If Meta changes the en
 - Existing R2 media, D1, Instagram feed, admin password and Cloudflare bindings remain unchanged.
 
 
-## v1.4
+## v1.5
 - Admin-configurable sponsor grids for Home and Sponsors pages (wide × high).
 - Per-tile logo upload/URL, click-through link, short text and background colour.
 - Animated pink-to-cyan sponsor tile outlines.
 - Hero images fade into black at the bottom.
 - Removed the Home hero pink/cyan separator line.
 - Pink/cyan glow added to hero/title text across the site.
+
+
+## v1.5 visual refinement
+- Extends the subtle animated pink/cyan gradient edge to news/event cards, career/stat highlights, social cards and photo gallery images.
+- Reworks non-home page heroes so more photography remains visible and content rises into the lower fade, creating a photo-to-black overlap rather than a hard visual cut.
+- Home hero proportions remain unchanged.
+- Respects reduced-motion accessibility preferences.
