@@ -120,3 +120,13 @@ Fixed the animated pink/cyan edge effect so it visibly flows on sponsor, news/ev
 - Highest album order number displays first on the public Photos page.
 - Newly created albums automatically receive the next highest order number and appear at the top.
 - Existing albums without an order remain valid and default to order 0 until numbered.
+
+
+## v2.3 consolidated update
+- Public Admin navigation link removed; /admin remains protected.
+- Editable Season navigation label (default: Season). Multi-year events support year, ordering, circuit and organiser URLs, report link, narrative and photos. Existing 2026 events are retained.
+- Event cards open a detail popup; /2026 and /season both show the new Season page.
+- Admin multi-file upload for albums and event photos (sequential uploads with progress and error reporting). Click Save website changes to publish uploaded photo references.
+- Responsive full-image banner treatment for portrait and landscape device orientations; black letterboxing is intentional to prevent cropping.
+- Existing D1 schema unchanged. Deploy with npx.cmd wrangler deploy; no migration required.
+- Photos remain stored in Cloudflare R2.
