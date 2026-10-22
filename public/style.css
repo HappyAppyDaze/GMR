@@ -135,3 +135,9 @@
 @media(orientation:portrait){.hero{min-height:clamp(280px,55vw,650px)}.page-hero{min-height:clamp(220px,49vw,470px)}}
 @media(orientation:landscape) and (max-width:1100px){.hero{min-height:clamp(260px,48vw,540px)}.page-hero{min-height:clamp(230px,40vw,430px)}}
 .year-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}.year-tabs .selected{background:var(--pink);border-color:var(--cyan)}.event-row{display:flex;width:100%;align-items:center;justify-content:space-between;gap:15px;color:#fff;text-align:left;cursor:pointer}.event-row:hover{border-left-color:var(--pink);background:#191922}.event-more{color:var(--cyan);font-size:14px}.event-photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}.event-photos img{width:100%;height:190px;object-fit:contain;background:#050507}.event-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}@media(max-width:620px){.event-row{flex-direction:column;align-items:flex-start}}
+
+/* Admin photo album previews: show full original proportions, without cropping. */
+.album-photo-preview{display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;border-radius:4px;}
+.photo-admin-row{min-width:0;}
+.photo-admin-row .album-photo-preview{max-height:460px;}
+@media(max-width:600px){.photo-admin-row .album-photo-preview{max-height:65vh;}}
